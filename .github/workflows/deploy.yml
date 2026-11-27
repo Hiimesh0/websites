@@ -39,12 +39,16 @@ jobs:
         working-directory: Maa_Health_Care_Therapy
         run: npm run build
 
-      - name: Copy root redirect
+      - name: Prepare Site Files
         run: |
           mkdir -p public_site
-          cp index.html public_site/index.html
-          mkdir -p public_site/Maa_Health_Care_Therapy
-          cp -r Maa_Health_Care_Therapy/dist public_site/Maa_Health_Care_Therapy/
+          # Copy built website directly to root of GitHub Pages
+          cp -r Maa_Health_Care_Therapy/dist/* public_site/
+          # Also support subpaths
+          mkdir -p public_site/Maa_Health_Care_Therapy/dist
+          cp -r Maa_Health_Care_Therapy/dist/* public_site/Maa_Health_Care_Therapy/dist/
+          mkdir -p public_site/docs
+          cp -r Maa_Health_Care_Therapy/dist/* public_site/docs/
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

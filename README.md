@@ -23,8 +23,9 @@ This repository hosts websites and client demonstration projects, including the 
 
 ## 🌐 Live Website (GitHub Pages)
 
-- **Root Portal:** [https://hiimesh0.github.io/websites/](https://hiimesh0.github.io/websites/)
-- **Maa Health Care Clinic Website:** [https://hiimesh0.github.io/websites/Maa_Health_Care_Therapy/dist/](https://hiimesh0.github.io/websites/Maa_Health_Care_Therapy/dist/)
+- **Root Live URL:** [https://hiimesh0.github.io/websites/](https://hiimesh0.github.io/websites/)
+- **Docs Folder Direct:** [https://hiimesh0.github.io/websites/docs/](https://hiimesh0.github.io/websites/docs/)
+- **Clinic Folder Subpath:** [https://hiimesh0.github.io/websites/Maa_Health_Care_Therapy/dist/](https://hiimesh0.github.io/websites/Maa_Health_Care_Therapy/dist/)
 
 ---
 

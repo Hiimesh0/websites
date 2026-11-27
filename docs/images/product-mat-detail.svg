@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" width="100%" height="100%" fill="none">
+  <defs>
+    <linearGradient id="wireHeat" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#E2E8F0"/>
+      <stop offset="50%" stop-color="#FCD34D"/>
+      <stop offset="100%" stop-color="#E2E8F0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="450" rx="16" fill="#F8F9F6"/>
+  <rect x="50" y="40" width="500" height="370" rx="12" fill="#1E293B" stroke="#475569" stroke-width="2"/>
+
+  <!-- Cutaway layer view showing internal heating circuit -->
+  <!-- Layer 1: Soft Breathable Cover -->
+  <rect x="70" y="60" width="460" height="70" rx="8" fill="#334155"/>
+  <text x="90" y="100" font-family="Manrope, sans-serif" font-size="13" font-weight="600" fill="#E2E8F0">Layer 1: Soft Ergonomic Thermal Cover Fabric</text>
+
+  <!-- Layer 2: Insulated Heating Core -->
+  <rect x="70" y="145" width="460" height="120" rx="8" fill="#0F172A" stroke="#C6A66B" stroke-width="1.5"/>
+  <path d="M 90 205 L 140 170 L 190 230 L 240 170 L 290 230 L 340 170 L 390 230 L 440 170 L 510 205" stroke="url(#wireHeat)" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <text x="90" y="170" font-family="Manrope, sans-serif" font-size="12" font-weight="600" fill="#FDE68A">Layer 2: Insulated Heating Circuit Grid (Even Heat)</text>
+
+  <!-- Layer 3: Protective Thermal Barrier -->
+  <rect x="70" y="280" width="460" height="70" rx="8" fill="#334155"/>
+  <text x="90" y="320" font-family="Manrope, sans-serif" font-size="13" font-weight="600" fill="#E2E8F0">Layer 3: Non-Slip Heat-Reflecting Insulating Base</text>
+
+  <!-- Info Tag -->
+  <g transform="translate(180, 365)">
+    <rect width="240" height="35" rx="6" fill="#145B58"/>
+    <text x="120" y="22" font-family="Manrope, sans-serif" font-size="12" font-weight="600" fill="#FFFFFF" text-anchor="middle">Therapy Mat Construction Detail</text>
+  </g>
+</svg>
