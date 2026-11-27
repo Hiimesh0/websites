@@ -1,6 +1,5 @@
 import React from 'react';
 import { 
-  ShieldCheck, 
   MapPin, 
   MessageCircle, 
   ArrowRight, 
@@ -45,26 +44,26 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onViewProduct, o
             <div className="lg:col-span-7 space-y-6 text-left">
               
               {/* Trust Badge */}
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#145B58]/10 text-[#145B58] text-xs font-semibold tracking-wide shadow-xs">
-                <ShieldCheck className="w-4 h-4 text-[#C6A66B]" />
-                <span>Maa Health Care • Heating Therapy &amp; Wellness Products, Surat</span>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#145B58]/10 text-[#145B58] text-xs font-bold tracking-wide shadow-xs">
+                <Sparkles className="w-4 h-4 text-[#C6A66B]" />
+                <span>Maa Health Care Therapy • Surat Heating Wellness Solutions</span>
               </div>
 
               {/* Headline */}
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#24312F] font-['Manrope'] tracking-tight leading-[1.14]">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#24312F] font-['Manrope'] tracking-tight leading-[1.12]">
                 Discover Comfortable <span className="text-[#145B58]">Heating Therapy Solutions</span> for Your Wellness
               </h1>
 
-              {/* Subheading */}
+              {/* Subheading / Value Proposition */}
               <p className="text-base sm:text-lg text-[#475569] leading-relaxed max-w-2xl">
-                Explore heating mattress and therapy mat options from Maa Health Care. Discover product details and contact our team for purchase or rental enquiries in Surat.
+                Thoughtful, smoke-free and controlled heat therapy solutions designed for everyday comfort, postpartum recovery, and full-body relaxation. Explore our Queen-size Ceratonic and 1092 Jade Stone heating mattresses with purchase and rental options across Surat.
               </p>
 
               {/* Action Buttons: 3 Prominent CTAs as requested */}
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-2">
                 <button
                   onClick={() => onNavigate('products')}
-                  className="px-6 py-4 rounded-xl bg-[#145B58] hover:bg-[#0E4340] text-white font-semibold text-sm flex items-center justify-center gap-2 shadow-md hover:shadow-lg transition-all"
+                  className="px-7 py-4 rounded-2xl bg-[#145B58] hover:bg-[#0E4340] text-white font-bold text-sm flex items-center justify-center gap-2 shadow-md hover:shadow-lg transition-all"
                 >
                   Explore Products
                   <ArrowRight className="w-4 h-4" />
@@ -74,7 +73,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onViewProduct, o
                   href={buildWhatsAppLink({ message: 'Hello Maa Health Care, I would like to inquire about your heating therapy products.' })}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-6 py-4 rounded-xl bg-[#25D366] hover:bg-[#20BD5A] text-white font-semibold text-sm flex items-center justify-center gap-2 shadow-md hover:shadow-lg transition-all"
+                  className="px-7 py-4 rounded-2xl bg-[#25D366] hover:bg-[#20BD5A] text-white font-bold text-sm flex items-center justify-center gap-2 shadow-md hover:shadow-lg transition-all"
                 >
                   <MessageCircle className="w-4 h-4 fill-white" />
                   Enquire on WhatsApp
@@ -82,11 +81,31 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onViewProduct, o
 
                 <a
                   href={getPhoneCallLink()}
-                  className="px-5 py-4 rounded-xl bg-white hover:bg-[#F1F4F1] border border-[#CBD5E1] text-[#24312F] font-semibold text-sm flex items-center justify-center gap-2 transition-all shadow-xs"
+                  className="px-5 py-4 rounded-2xl bg-white hover:bg-[#F1F4F1] border border-[#CBD5E1] text-[#24312F] font-bold text-sm flex items-center justify-center gap-2 transition-all shadow-xs"
                 >
                   <Phone className="w-4 h-4 text-[#145B58]" />
                   Call Now
                 </a>
+              </div>
+
+              {/* Coolma-Style Trust Value Bullets */}
+              <div className="pt-3 grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-semibold text-[#334155]">
+                <div className="flex items-center gap-2">
+                  <span className="w-5 h-5 rounded-full bg-[#145B58]/10 text-[#145B58] flex items-center justify-center font-bold text-[10px]">✓</span>
+                  <span>100% Smoke-Free &amp; Medicine-Free Warmth</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="w-5 h-5 rounded-full bg-[#145B58]/10 text-[#145B58] flex items-center justify-center font-bold text-[10px]">✓</span>
+                  <span>Digital Thermostat Temperature Control</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="w-5 h-5 rounded-full bg-[#145B58]/10 text-[#145B58] flex items-center justify-center font-bold text-[10px]">✓</span>
+                  <span>Surat Purchase &amp; Rental Enquiries</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="w-5 h-5 rounded-full bg-[#145B58]/10 text-[#145B58] flex items-center justify-center font-bold text-[10px]">✓</span>
+                  <span>Ceratonic &amp; 1092 Jade Stone Models</span>
+                </div>
               </div>
 
               {/* Quick Trust Meta Row */}
