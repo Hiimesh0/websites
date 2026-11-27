@@ -3,17 +3,20 @@ import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 import { ProductDetailModal } from './components/ProductDetailModal';
+import { PhotoGalleryLightbox } from './components/PhotoGalleryLightbox';
 import { HomePage } from './pages/HomePage';
 import { AboutPage } from './pages/AboutPage';
 import { ProductsPage } from './pages/ProductsPage';
 import { HowItWorksPage } from './pages/HowItWorksPage';
 import { ContactPage } from './pages/ContactPage';
 import { type Product, PRODUCTS } from './data/businessData';
+import { GALLERY_PHOTOS, type GalleryPhoto } from './data/galleryData';
 import { useNavigation, type PageId } from './hooks/useNavigation';
 
 export function App() {
   const { currentPage, navigateTo } = useNavigation('home');
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [selectedGalleryPhoto, setSelectedGalleryPhoto] = useState<GalleryPhoto | null>(null);
 
   const handleSelectProductById = (productId: string) => {
     const prod = PRODUCTS.find((p) => p.id === productId);
@@ -36,18 +39,21 @@ export function App() {
           <HomePage 
             onNavigate={(p) => navigateTo(p as PageId)} 
             onViewProduct={(product) => setSelectedProduct(product)} 
+            onPhotoClick={(photo) => setSelectedGalleryPhoto(photo)}
           />
         )}
 
         {currentPage === 'about' && (
           <AboutPage 
             onNavigate={(p) => navigateTo(p as PageId)} 
+            onPhotoClick={(photo) => setSelectedGalleryPhoto(photo)}
           />
         )}
 
         {currentPage === 'products' && (
           <ProductsPage 
             onViewProduct={(product) => setSelectedProduct(product)} 
+            onPhotoClick={(photo) => setSelectedGalleryPhoto(photo)}
           />
         )}
 
@@ -58,7 +64,9 @@ export function App() {
         )}
 
         {currentPage === 'contact' && (
-          <ContactPage />
+          <ContactPage 
+            onPhotoClick={(photo) => setSelectedGalleryPhoto(photo)}
+          />
         )}
       </main>
 
@@ -66,6 +74,14 @@ export function App() {
       <ProductDetailModal
         product={selectedProduct}
         onClose={() => setSelectedProduct(null)}
+      />
+
+      {/* Global Photo Gallery Lightbox */}
+      <PhotoGalleryLightbox
+        photo={selectedGalleryPhoto}
+        photos={GALLERY_PHOTOS}
+        onClose={() => setSelectedGalleryPhoto(null)}
+        onNavigate={(photo) => setSelectedGalleryPhoto(photo)}
       />
 
       {/* Floating WhatsApp Action Button */}

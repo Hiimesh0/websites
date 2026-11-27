@@ -14,6 +14,13 @@ This repository hosts websites and client demonstration projects, including the 
 
 ---
 
+## 📸 Verified Photo Gallery & Google Maps Integration
+
+- **Google Maps Listing:** [Maa Health Care Therapy, Times Trade Center, Surat](https://www.google.com/maps/search/?api=1&query=Maa+Health+Care+Therapy+Times+Trade+Center+Punagam+Magob+Surat+Gujarat+395011)
+- **Interactive Lightbox:** Allows prospective clients and the business owner to inspect high-resolution product photographs, Ceratonic discs, Jade stone arrays, and office premises with full attribution.
+
+---
+
 ## 🌐 Live Website (GitHub Pages)
 
 - **Root Portal:** [https://hiimesh0.github.io/websites/](https://hiimesh0.github.io/websites/)

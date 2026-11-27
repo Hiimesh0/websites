@@ -12,16 +12,19 @@ import {
   Clock
 } from 'lucide-react';
 import { BUSINESS_INFO, PRODUCTS, HOW_IT_WORKS_STEPS, type Product } from '../data/businessData';
+import { GALLERY_PHOTOS, type GalleryPhoto } from '../data/galleryData';
 import { buildWhatsAppLink, getPhoneCallLink } from '../utils/whatsapp';
 import { ProductCard } from '../components/ProductCard';
 import { EnquiryCTA } from '../components/EnquiryCTA';
+import { PhotoGallerySection } from '../components/PhotoGallerySection';
 
 interface HomePageProps {
   onNavigate: (page: string) => void;
   onViewProduct: (product: Product) => void;
+  onPhotoClick: (photo: GalleryPhoto) => void;
 }
 
-export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onViewProduct }) => {
+export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onViewProduct, onPhotoClick }) => {
   return (
     <div className="space-y-16 sm:space-y-24">
       
@@ -239,6 +242,26 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onViewProduct })
               onViewDetails={onViewProduct}
             />
           ))}
+        </div>
+      </section>
+
+      {/* GOOGLE MAPS LISTING & AUTHENTIC PHOTO SHOWCASE */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <PhotoGallerySection
+          onPhotoClick={onPhotoClick}
+          title="Google Maps Listing & Business Photos"
+          subtitle="Explore authentic product demonstrations, Ceratonic disc arrays, natural jade stones, and our Times Trade Center location in Surat."
+          limit={4}
+          showFilters={false}
+        />
+        <div className="mt-6 text-center">
+          <button
+            onClick={() => onNavigate('about')}
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-[#145B58] text-[#145B58] hover:bg-[#145B58]/5 font-semibold text-xs transition-colors"
+          >
+            <span>Explore All {GALLERY_PHOTOS.length} Business Listing Photographs in About Us</span>
+            <ArrowRight className="w-4 h-4" />
+          </button>
         </div>
       </section>
 

@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
-import { Sparkles, MessageCircle, Phone, ShieldAlert } from 'lucide-react';
+import { Sparkles, MessageCircle, Phone, ShieldAlert, Camera } from 'lucide-react';
 import { PRODUCTS, type Product, BUSINESS_INFO } from '../data/businessData';
+import { GALLERY_PHOTOS, type GalleryPhoto } from '../data/galleryData';
 import { buildWhatsAppLink, getPhoneCallLink } from '../utils/whatsapp';
 import { ProductCard } from '../components/ProductCard';
 
 interface ProductsPageProps {
   onViewProduct: (product: Product) => void;
+  onPhotoClick?: (photo: GalleryPhoto) => void;
   selectedCategory?: string;
 }
 
-export const ProductsPage: React.FC<ProductsPageProps> = ({ onViewProduct }) => {
+export const ProductsPage: React.FC<ProductsPageProps> = ({ onViewProduct, onPhotoClick }) => {
   const [selectedFilter, setSelectedFilter] = useState<string>('All');
 
   const filterOptions = [
@@ -45,8 +47,19 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({ onViewProduct }) => 
         </p>
 
         {/* Pricing notice */}
-        <div className="inline-block px-4 py-2 rounded-xl bg-white border border-[#E8ECE7] text-xs text-[#145B58] font-semibold shadow-xs">
-          Pricing Note: All items are currently <strong>Price on Request</strong>. Contact our team directly for confirmed prices.
+        <div className="flex flex-wrap items-center justify-center gap-3">
+          <div className="inline-block px-4 py-2 rounded-xl bg-white border border-[#E8ECE7] text-xs text-[#145B58] font-semibold shadow-xs">
+            Pricing Note: All items are currently <strong>Price on Request</strong>. Contact our team directly for confirmed prices.
+          </div>
+          {onPhotoClick && (
+            <button
+              onClick={() => onPhotoClick(GALLERY_PHOTOS[0])}
+              className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-[#145B58]/10 hover:bg-[#145B58]/20 text-xs font-semibold text-[#145B58] transition-colors"
+            >
+              <Camera className="w-3.5 h-3.5 text-[#C6A66B]" />
+              View Demonstration Photos ({GALLERY_PHOTOS.length})
+            </button>
+          )}
         </div>
       </div>
 

@@ -37,6 +37,16 @@ A modern, responsive, and conversion-focused business website developed for **Ma
 
 ---
 
+## 📸 Google Maps Listing Photo Gallery & Lightbox
+
+The website integrates authentic listing photographs attributed to **Maa Health Care Therapy** at Times Trade Center, Surat:
+- **Interactive Lightbox:** Full-screen modal with Next/Previous navigation, keyboard controls (Arrow keys, Esc), and image details.
+- **Categorized Views:** Products, Office & Exterior (Times Trade Center 4th Floor Office 415), and Product Demonstrations (Far Infrared ceramic core, 1092 Jade stone cluster, multi-layer circuit grids).
+- **Google Maps Attribution Compliance:** Each image provides direct links to the official Google Maps listing and author attribution conforming to Google Maps Platform policies.
+- **WhatsApp Action:** Instant button to inquire about any specific photographed mattress or therapy mat on WhatsApp (+91 95124 28000).
+
+---
+
 ## 🚀 Technology Stack
 
 - **Framework:** React 19 + TypeScript

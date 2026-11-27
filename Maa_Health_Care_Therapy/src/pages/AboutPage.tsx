@@ -2,12 +2,15 @@ import React from 'react';
 import { ShieldCheck, MapPin, Phone, MessageCircle, Layers, CheckCircle2, Building, Sparkles, AlertCircle } from 'lucide-react';
 import { BUSINESS_INFO } from '../data/businessData';
 import { buildWhatsAppLink, getPhoneCallLink } from '../utils/whatsapp';
+import { PhotoGallerySection } from '../components/PhotoGallerySection';
+import type { GalleryPhoto } from '../data/galleryData';
 
 interface AboutPageProps {
   onNavigate: (page: string) => void;
+  onPhotoClick: (photo: GalleryPhoto) => void;
 }
 
-export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
+export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onPhotoClick }) => {
   return (
     <div className="py-12 sm:py-16 space-y-16">
       
@@ -162,6 +165,16 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
           </div>
 
         </div>
+      </section>
+
+      {/* FULL GOOGLE MAPS LISTING & BUSINESS PHOTO GALLERY */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <PhotoGallerySection
+          onPhotoClick={onPhotoClick}
+          title="Maa Health Care — Business & Product Photo Gallery"
+          subtitle="Explore authentic listing photographs from our Google Maps and supplier presence. Click any image to view full-size details and specifications."
+          showFilters={true}
+        />
       </section>
 
       {/* Section 5: Business Location & Verified Registry */}

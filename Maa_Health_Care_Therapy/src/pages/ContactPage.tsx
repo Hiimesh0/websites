@@ -1,10 +1,15 @@
 import React from 'react';
-import { MapPin, Phone, MessageCircle, Building2, ExternalLink, ShieldCheck, UserCheck } from 'lucide-react';
+import { MapPin, Phone, MessageCircle, Building2, ExternalLink, ShieldCheck, UserCheck, Maximize2 } from 'lucide-react';
 import { BUSINESS_INFO } from '../data/businessData';
+import { GALLERY_PHOTOS, type GalleryPhoto } from '../data/galleryData';
 import { buildWhatsAppLink, getPhoneCallLink } from '../utils/whatsapp';
 import { ContactForm } from '../components/ContactForm';
 
-export const ContactPage: React.FC = () => {
+interface ContactPageProps {
+  onPhotoClick?: (photo: GalleryPhoto) => void;
+}
+
+export const ContactPage: React.FC<ContactPageProps> = ({ onPhotoClick }) => {
   return (
     <div className="py-12 sm:py-16 space-y-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
@@ -111,14 +116,26 @@ export const ContactPage: React.FC = () => {
           </div>
 
           {/* Location Visual Box */}
-          <div className="rounded-3xl overflow-hidden border border-[#D5DCD6] shadow-sm bg-white">
-            <img
-              src="./images/surat-office.svg"
-              alt="Maa Health Care Times Trade Center Surat"
-              className="w-full h-auto object-cover"
-            />
-            <div className="p-3 bg-[#F8F9F6] text-center text-xs text-[#64748B] border-t border-[#E8ECE7]">
-              Times Trade Center, BTRS Road, Punagam–Magob, Surat
+          <div 
+            onClick={() => onPhotoClick && onPhotoClick(GALLERY_PHOTOS[2])}
+            className="rounded-3xl overflow-hidden border border-[#D5DCD6] shadow-sm bg-white cursor-pointer group relative"
+          >
+            <div className="relative overflow-hidden">
+              <img
+                src="./images/surat-office.svg"
+                alt="Maa Health Care Times Trade Center Surat"
+                className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-[#145B58]/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+                <span className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/20 text-xs font-semibold backdrop-blur-xs">
+                  <Maximize2 className="w-3.5 h-3.5" />
+                  View Office Listing Photo
+                </span>
+              </div>
+            </div>
+            <div className="p-3 bg-[#F8F9F6] text-center text-xs text-[#64748B] border-t border-[#E8ECE7] flex items-center justify-between px-4">
+              <span>Times Trade Center, Punagam–Magob, Surat</span>
+              <span className="text-[#145B58] font-bold text-[11px]">Click to Expand</span>
             </div>
           </div>
 
