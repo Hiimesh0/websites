@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%" fill="none">
+  <defs>
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#EBF4F2"/>
+      <stop offset="100%" stop-color="#DAE7E4"/>
+    </linearGradient>
+    <linearGradient id="bldgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#E2E8F0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Clean Sky -->
+  <rect width="600" height="400" rx="16" fill="url(#skyGrad)"/>
+
+  <!-- Times Trade Center Silhouette / Architectural Representation -->
+  <rect x="140" y="70" width="320" height="270" rx="6" fill="url(#bldgGrad)" stroke="#94A3B8" stroke-width="2"/>
+  
+  <!-- Modern Commercial Glass Grid Windows -->
+  <g fill="#145B58" fill-opacity="0.12" stroke="#CBD5E1" stroke-width="1">
+    <!-- 4th Floor Highlight (Office 415) -->
+    <rect x="160" y="90" width="280" height="38" rx="2" fill="#C6A66B" fill-opacity="0.25" stroke="#C6A66B" stroke-width="2"/>
+    <text x="300" y="114" font-family="Manrope, sans-serif" font-size="11" font-weight="700" fill="#145B58" text-anchor="middle">4th Floor — Office 415: Maa Health Care</text>
+
+    <!-- 3rd Floor -->
+    <rect x="160" y="140" width="280" height="35" rx="2"/>
+    <!-- 2nd Floor -->
+    <rect x="160" y="185" width="280" height="35" rx="2"/>
+    <!-- 1st Floor -->
+    <rect x="160" y="230" width="280" height="35" rx="2"/>
+    <!-- Ground / Lobby Entrance -->
+    <rect x="160" y="275" width="280" height="55" rx="2" fill="#8BAF9B" fill-opacity="0.2"/>
+  </g>
+
+  <!-- Main Entrance Doors -->
+  <rect x="270" y="290" width="60" height="40" rx="2" fill="#1E293B"/>
+  <line x1="300" y1="290" x2="300" y2="330" stroke="#FFFFFF" stroke-width="1.5"/>
+
+  <!-- Street Level & BTRS Road Indicator -->
+  <rect y="335" width="600" height="65" fill="#334155"/>
+  <line x1="0" y1="365" x2="600" y2="365" stroke="#F8FAFC" stroke-width="3" stroke-dasharray="16,12"/>
+  <text x="50" y="388" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#94A3B8">BTRS Road, Punagam–Magob, Surat</text>
+
+  <!-- Location Pin Overlay -->
+  <g transform="translate(470, 70)">
+    <circle cx="24" cy="24" r="24" fill="#145B58"/>
+    <path d="M 24 12 C 18 12 14 16 14 21 C 14 27 24 36 24 36 C 24 36 34 27 34 21 C 34 16 30 12 24 12 Z" fill="#C6A66B"/>
+    <circle cx="24" cy="20" r="4" fill="#FFFFFF"/>
+  </g>
+</svg>
