@@ -1,6 +1,6 @@
 import React from 'react';
-import { MessageCircle, Info, CheckCircle2, ChevronRight, Zap } from 'lucide-react';
-import type { Product } from '../data/businessData';
+import { MessageCircle, Info, CheckCircle2, ChevronRight, Zap, FileDown } from 'lucide-react';
+import { FEATURES, type Product } from '../data/businessData';
 import { buildWhatsAppLink } from '../utils/whatsapp';
 
 interface ProductCardProps {
@@ -105,6 +105,17 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onViewDetails
             <ChevronRight className="w-3 h-3" />
           </a>
         </div>
+
+        {FEATURES.enableBrochure && (
+          <a
+            href="./brochure.pdf"
+            download
+            className="mt-2 w-full py-2 px-3 rounded-xl border border-[#E8ECE7] hover:bg-[#F8F9F6] text-[#475569] text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors"
+          >
+            <FileDown className="w-3.5 h-3.5 text-[#145B58]" />
+            Download Brochure
+          </a>
+        )}
 
       </div>
 

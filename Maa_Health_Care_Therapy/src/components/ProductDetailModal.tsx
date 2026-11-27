@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { X, MessageCircle, CheckCircle2, ShieldAlert, Sparkles, MapPin } from 'lucide-react';
+import { X, MessageCircle, CheckCircle2, ShieldAlert, Sparkles, MapPin, Share2, FileDown, Check } from 'lucide-react';
 import type { Product } from '../data/businessData';
-import { BUSINESS_INFO } from '../data/businessData';
+import { BUSINESS_INFO, FEATURES } from '../data/businessData';
 import { buildWhatsAppLink, getPhoneCallLink } from '../utils/whatsapp';
 
 interface ProductDetailModalProps {
@@ -13,9 +13,36 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
   product, 
   onClose 
 }) => {
+  const [activeImage, setActiveImage] = useState<'primary' | 'secondary'>('primary');
+  const [copied, setCopied] = useState(false);
+
   if (!product) return null;
 
-  const [activeImage, setActiveImage] = useState<'primary' | 'secondary'>('primary');
+  const handleShare = async () => {
+    const shareUrl = `${window.location.origin}${window.location.pathname}#products`;
+    const shareData = {
+      title: product.name,
+      text: `${product.name} — ${product.tagline} | Maa Health Care Therapy, Surat`,
+      url: shareUrl,
+    };
+
+    if (navigator.share) {
+      try {
+        await navigator.share(shareData);
+        return;
+      } catch {
+        // User cancelled or share failed; fall back to clipboard
+      }
+    }
+
+    try {
+      await navigator.clipboard.writeText(`${shareData.text}\n${shareUrl}`);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2200);
+    } catch {
+      // Clipboard unavailable
+    }
+  };
 
   const whatsappPurchaseLink = buildWhatsAppLink({
     productName: product.name,
@@ -44,13 +71,32 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
             </span>
             <span className="text-xs text-[#64748B]">Maa Health Care • Surat</span>
           </div>
-          <button
-            onClick={onClose}
-            className="p-1.5 rounded-full text-[#64748B] hover:text-[#24312F] hover:bg-[#E8ECE7] transition-colors"
-            aria-label="Close modal"
-          >
-            <X className="w-5 h-5" />
-          </button>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={handleShare}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-[#E8ECE7] bg-white hover:bg-[#F1F4F1] text-xs font-semibold text-[#334155] transition-colors"
+              aria-label={`Share ${product.name}`}
+            >
+              {copied ? (
+                <>
+                  <Check className="w-3.5 h-3.5 text-[#25D366]" />
+                  <span>Link Copied</span>
+                </>
+              ) : (
+                <>
+                  <Share2 className="w-3.5 h-3.5 text-[#145B58]" />
+                  <span>Share</span>
+                </>
+              )}
+            </button>
+            <button
+              onClick={onClose}
+              className="p-1.5 rounded-full text-[#64748B] hover:text-[#24312F] hover:bg-[#E8ECE7] transition-colors"
+              aria-label="Close modal"
+            >
+              <X className="w-5 h-5" />
+            </button>
+          </div>
         </div>
 
         {/* Modal Scrollable Body */}
@@ -197,7 +243,17 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
             Direct manufacturer &amp; supplier communication in Surat
           </div>
 
-          <div className="flex items-center gap-2 w-full sm:w-auto">
+          <div className="flex flex-wrap items-center gap-2 w-full sm:w-auto">
+            {FEATURES.enableBrochure && (
+              <a
+                href="./brochure.pdf"
+                download
+                className="flex-1 sm:flex-none px-4 py-2.5 rounded-xl border border-[#CBD5E1] text-[#334155] hover:bg-[#F8F9F6] text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors"
+              >
+                <FileDown className="w-3.5 h-3.5 text-[#145B58]" />
+                Download Brochure
+              </a>
+            )}
             <a
               href={whatsappRentalLink}
               target="_blank"

@@ -237,6 +237,18 @@ export const HOW_IT_WORKS_STEPS = [
   }
 ];
 
+// ─── Feature Flags ────────────────────────────────────────────────────────────
+export const FEATURES = {
+  enableTestimonials: false,
+  enableServices: true,
+  enableRental: true,
+  enableDemonstration: true,
+  enableGallery: true,
+  enableBrochure: false,          // set to true when client provides PDF
+  enableProductComparison: true,
+  enableLanguageSwitcher: true,
+};
+
 export const FAQS = [
   {
     question: "What products does Maa Health Care offer?",

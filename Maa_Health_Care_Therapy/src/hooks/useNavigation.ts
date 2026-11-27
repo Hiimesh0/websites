@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 
-export type PageId = 'home' | 'about' | 'products' | 'how-it-works' | 'contact';
+export type PageId = 'home' | 'about' | 'products' | 'how-it-works' | 'gallery' | 'contact';
 
 export function useNavigation(defaultPage: PageId = 'home') {
   const [currentPage, setCurrentPage] = useState<PageId>(defaultPage);
@@ -8,7 +8,7 @@ export function useNavigation(defaultPage: PageId = 'home') {
   useEffect(() => {
     const handleHash = () => {
       const hash = window.location.hash.replace('#', '') as PageId;
-      if (['home', 'about', 'products', 'how-it-works', 'contact'].includes(hash)) {
+      if (['home', 'about', 'products', 'how-it-works', 'gallery', 'contact'].includes(hash)) {
         setCurrentPage(hash);
       }
     };

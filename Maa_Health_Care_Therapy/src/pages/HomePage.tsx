@@ -1,17 +1,17 @@
 import React from 'react';
-import { 
-  MapPin, 
-  MessageCircle, 
-  ArrowRight, 
-  Phone, 
-  Layers, 
-  Sparkles, 
+import {
+  MapPin,
+  MessageCircle,
+  ArrowRight,
+  Phone,
+  Layers,
+  Sparkles,
   ExternalLink,
   Clock,
   Star,
   Quote
 } from 'lucide-react';
-import { BUSINESS_INFO, PRODUCTS, type Product } from '../data/businessData';
+import { BUSINESS_INFO, PRODUCTS, FEATURES, type Product } from '../data/businessData';
 import { GALLERY_PHOTOS, type GalleryPhoto } from '../data/galleryData';
 import { buildWhatsAppLink, getPhoneCallLink } from '../utils/whatsapp';
 import { ProductCard } from '../components/ProductCard';
@@ -24,19 +24,23 @@ import { FAQSection } from '../components/FAQSection';
 import { EnquiryCTA } from '../components/EnquiryCTA';
 import { ContactForm } from '../components/ContactForm';
 import { PhotoGallerySection } from '../components/PhotoGallerySection';
+import { HeatingTherapyEducation } from '../components/HeatingTherapyEducation';
+import { AlternatingFeatures } from '../components/AlternatingFeatures';
+import type { Translations } from '../data/translations/en';
 
 interface HomePageProps {
   onNavigate: (page: string) => void;
   onViewProduct: (product: Product) => void;
   onPhotoClick: (photo: GalleryPhoto) => void;
+  t?: Translations;
 }
 
-export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onViewProduct, onPhotoClick }) => {
+export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onViewProduct, onPhotoClick, t }) => {
   return (
     <div className="space-y-16 sm:space-y-24">
       
       {/* SECTION 1: HERO */}
-      <section className="relative pt-8 sm:pt-14 pb-16 bg-gradient-to-b from-[#F2F5F2] via-[#F8F9F6] to-[#F8F9F6] border-b border-[#E8ECE7] overflow-hidden">
+      <section className="relative pt-8 sm:pt-14 pb-16 bg-gradient-to-b from-[#FFF8F0] via-[#FEF9F0] to-[#F8F9F6] border-b border-[#E8ECE7] overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
@@ -46,17 +50,19 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onViewProduct, o
               {/* Trust Badge */}
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#145B58]/10 text-[#145B58] text-xs font-bold tracking-wide shadow-xs">
                 <Sparkles className="w-4 h-4 text-[#C6A66B]" />
-                <span>Maa Health Care Therapy • Surat Heating Wellness Solutions</span>
+                <span>{t?.hero.badge ?? 'Maa Health Care Therapy • Surat Heating Wellness Solutions'}</span>
               </div>
 
               {/* Headline */}
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#24312F] font-['Manrope'] tracking-tight leading-[1.12]">
-                Discover Comfortable <span className="text-[#145B58]">Heating Therapy Solutions</span> for Your Wellness
+                {t ? t.hero.headline : (
+                  <>Discover Comfortable <span className="text-[#145B58]">Heating Therapy Solutions</span> for Your Wellness</>
+                )}
               </h1>
 
               {/* Subheading / Value Proposition */}
               <p className="text-base sm:text-lg text-[#475569] leading-relaxed max-w-2xl">
-                Thoughtful, smoke-free and controlled heat therapy solutions designed for everyday comfort, postpartum recovery, and full-body relaxation. Explore our Queen-size Ceratonic and 1092 Jade Stone heating mattresses with purchase and rental options across Surat.
+                {t?.hero.sub ?? 'Thoughtful, smoke-free and controlled heat therapy solutions designed for everyday comfort, postpartum recovery, and full-body relaxation. Explore our Queen-size Ceratonic and 1092 Jade Stone heating mattresses with purchase and rental options across Surat.'}
               </p>
 
               {/* Action Buttons: 3 Prominent CTAs as requested */}
@@ -65,7 +71,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onViewProduct, o
                   onClick={() => onNavigate('products')}
                   className="px-7 py-4 rounded-2xl bg-[#145B58] hover:bg-[#0E4340] text-white font-bold text-sm flex items-center justify-center gap-2 shadow-md hover:shadow-lg transition-all"
                 >
-                  Explore Products
+                  {t?.hero.cta_explore ?? 'Explore Products'}
                   <ArrowRight className="w-4 h-4" />
                 </button>
 
@@ -76,7 +82,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onViewProduct, o
                   className="px-7 py-4 rounded-2xl bg-[#25D366] hover:bg-[#20BD5A] text-white font-bold text-sm flex items-center justify-center gap-2 shadow-md hover:shadow-lg transition-all"
                 >
                   <MessageCircle className="w-4 h-4 fill-white" />
-                  Enquire on WhatsApp
+                  {t?.hero.cta_whatsapp ?? 'Enquire on WhatsApp'}
                 </a>
 
                 <a
@@ -84,7 +90,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onViewProduct, o
                   className="px-5 py-4 rounded-2xl bg-white hover:bg-[#F1F4F1] border border-[#CBD5E1] text-[#24312F] font-bold text-sm flex items-center justify-center gap-2 transition-all shadow-xs"
                 >
                   <Phone className="w-4 h-4 text-[#145B58]" />
-                  Call Now
+                  {t?.hero.cta_call ?? 'Call Now'}
                 </a>
               </div>
 
@@ -289,11 +295,17 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onViewProduct, o
         </div>
       </section>
 
-      {/* SECTION 6: PRODUCT USAGE & CARE (HOW TO USE) */}
+      {/* SECTION 6: WHAT IS HEATING THERAPY? (Educational) */}
+      <HeatingTherapyEducation />
+
+      {/* SECTION 7: PRODUCT USAGE & CARE (HOW TO USE) */}
       <HowToUseSection />
 
-      {/* SECTION 7: TRADITIONAL METHOD VS MODERN HEATING PRODUCT */}
+      {/* SECTION 8: TRADITIONAL METHOD VS MODERN HEATING PRODUCT */}
       <ComparisonSection />
+
+      {/* SECTION 8b: KEY PRODUCT FEATURES (Alternating) */}
+      <AlternatingFeatures />
 
       {/* SECTION 8: CUSTOMER REVIEWS & EXPERIENCES */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
@@ -348,27 +360,29 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onViewProduct, o
       </section>
 
       {/* SECTION 9: OUR SERVICES */}
-      <ServicesSection onNavigate={onNavigate} />
+      {FEATURES.enableServices && <ServicesSection onNavigate={onNavigate} />}
 
       {/* SECTION 10: GOOGLE MAPS LISTING PHOTO GALLERY PREVIEW */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <PhotoGallerySection
-          onPhotoClick={onPhotoClick}
-          title="Google Maps Listing &amp; Business Photographs"
-          subtitle="Explore authentic product demonstrations, Ceratonic disc arrays, natural jade stones, and our Times Trade Center location in Surat."
-          limit={4}
-          showFilters={false}
-        />
-        <div className="mt-6 text-center">
-          <button
-            onClick={() => onNavigate('about')}
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-[#145B58] text-[#145B58] hover:bg-[#145B58]/5 font-semibold text-xs transition-colors"
-          >
-            <span>Explore All {GALLERY_PHOTOS.length} Business Listing Photographs in About Us</span>
-            <ArrowRight className="w-4 h-4" />
-          </button>
-        </div>
-      </section>
+      {FEATURES.enableGallery && (
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <PhotoGallerySection
+            onPhotoClick={onPhotoClick}
+            title="Google Maps Listing &amp; Business Photographs"
+            subtitle="Explore authentic product demonstrations, Ceratonic disc arrays, natural jade stones, and our Times Trade Center location in Surat."
+            limit={4}
+            showFilters={false}
+          />
+          <div className="mt-6 text-center">
+            <button
+              onClick={() => onNavigate('gallery')}
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-[#145B58] text-[#145B58] hover:bg-[#145B58]/5 font-semibold text-xs transition-colors"
+            >
+              <span>Explore All {GALLERY_PHOTOS.length} Business Listing Photographs</span>
+              <ArrowRight className="w-4 h-4" />
+            </button>
+          </div>
+        </section>
+      )}
 
       {/* SECTION 11: FREQUENTLY ASKED QUESTIONS */}
       <FAQSection />
