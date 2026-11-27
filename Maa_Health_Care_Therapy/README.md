@@ -37,6 +37,23 @@ A modern, responsive, and conversion-focused business website developed for **Ma
 
 ---
 
+## 🌟 Architecture & Layout (Inspired by Coolma.in Reference)
+
+1. **Hero Section:** Full-width emotional presentation, high-impact headline, supporting description, triple CTAs (`Explore Products`, `Enquire on WhatsApp`, `Call Now`), and authentic lifestyle imagery.
+2. **Business Highlights:** Stat cards with 5.0/5.0 verified review badge (437 reviews), Model 1092 Jade stone highlights, and dual purchase/rental options.
+3. **Product Showcase:** Ceratonic Queen mattress, Model 1092 Jade Stone mattress, and full-body flexible therapy mat with verified specs & direct WhatsApp triggers.
+4. **Product Demonstration Video Section:** Video showcase with interactive playlist (operation & controller, Ceratonic Far-Infrared demo, 1092 Jade stone demo) and modal player.
+5. **Why Choose Maa Health Care:** Authentic product imagery on one side with verified customer experience feature cards on the other.
+6. **Product Usage & Guidance (How to Use):** 4-step clear walkthrough for surface placement, digital thermostat connection, session relaxation, and care/maintenance.
+7. **Traditional Methods vs. Modern Heating Products:** Side-by-side comparison table contrasting hot water bags/cloths with Maa Health Care's digital thermostat-controlled electric mattresses.
+8. **Customer Reviews & Listing Experiences:** Official 5.0/5.0 rating showcase with verified review link.
+9. **Our Services & Offerings:** 6 cards covering heating mattress supply, Jade stone mattresses, Ceratonic Far-Infrared tech, therapy mat rentals, and in-person Surat demonstrations.
+10. **Google Maps Photo Gallery & Lightbox:** Interactive gallery with category filtering and legal attribution.
+11. **Frequently Asked Questions:** Accordion FAQ.
+12. **Strong Enquiry CTA & Booking Form:** Contact form with city, purchase/rental type, optional postpartum care parameters (expected date, delivery type, demo requirement), and 1-click WhatsApp dispatch to `+91 95124 28000`.
+
+---
+
 ## 📸 Google Maps Listing Photo Gallery & Lightbox
 
 The website integrates authentic listing photographs attributed to **Maa Health Care Therapy** at Times Trade Center, Surat:
