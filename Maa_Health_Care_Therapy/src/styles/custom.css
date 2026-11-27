@@ -1,0 +1,25 @@
+/* Supplemental Design System Variables & Utility Classes for Maa Health Care Therapy */
+
+:root {
+  --color-primary: #145B58;
+  --color-secondary: #8BAF9B;
+  --color-bg-warm: #F8F9F6;
+  --color-surface: #FFFFFF;
+  --color-text-charcoal: #24312F;
+  --color-accent-gold: #C6A66B;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}

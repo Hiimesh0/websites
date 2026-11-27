@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" width="100%" height="100%" fill="none">
+  <defs>
+    <linearGradient id="ceraBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FDFDFD"/>
+      <stop offset="100%" stop-color="#F2F3EE"/>
+    </linearGradient>
+    <radialGradient id="discGrad" cx="40%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="60%" stop-color="#EBECE6"/>
+      <stop offset="100%" stop-color="#D0D5CF"/>
+    </radialGradient>
+    <linearGradient id="borderGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#B8C8BF"/>
+      <stop offset="50%" stop-color="#8BAF9B"/>
+      <stop offset="100%" stop-color="#145B58"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Clean Studio Canvas -->
+  <rect width="600" height="450" rx="16" fill="#F8F9F6"/>
+  <circle cx="300" cy="225" r="210" fill="#EAECE7" fill-opacity="0.5"/>
+
+  <!-- Queen Mattress Outer Border (Ceratonic White/Cream with Elegant Teal Stitching) -->
+  <rect x="80" y="40" width="440" height="340" rx="20" fill="url(#ceraBg)" stroke="url(#borderGrad)" stroke-width="6"/>
+  <rect x="94" y="54" width="412" height="312" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+
+  <!-- Ceratonic Disc Hexagonal Array Pattern -->
+  <g fill="url(#discGrad)" stroke="#B0BEB7" stroke-width="1.2">
+    <!-- Row 1 -->
+    <circle cx="140" cy="90" r="18"/>
+    <circle cx="195" cy="90" r="18"/>
+    <circle cx="250" cy="90" r="18"/>
+    <circle cx="305" cy="90" r="18"/>
+    <circle cx="360" cy="90" r="18"/>
+    <circle cx="415" cy="90" r="18"/>
+    <circle cx="470" cy="90" r="18"/>
+
+    <!-- Row 2 -->
+    <circle cx="140" cy="145" r="18"/>
+    <circle cx="195" cy="145" r="18"/>
+    <circle cx="250" cy="145" r="18"/>
+    <circle cx="305" cy="145" r="18"/>
+    <circle cx="360" cy="145" r="18"/>
+    <circle cx="415" cy="145" r="18"/>
+    <circle cx="470" cy="145" r="18"/>
+
+    <!-- Row 3 -->
+    <circle cx="140" cy="200" r="18"/>
+    <circle cx="195" cy="200" r="18"/>
+    <circle cx="250" cy="200" r="18"/>
+    <circle cx="305" cy="200" r="18"/>
+    <circle cx="360" cy="200" r="18"/>
+    <circle cx="415" cy="200" r="18"/>
+    <circle cx="470" cy="200" r="18"/>
+
+    <!-- Row 4 -->
+    <circle cx="140" cy="255" r="18"/>
+    <circle cx="195" cy="255" r="18"/>
+    <circle cx="250" cy="255" r="18"/>
+    <circle cx="305" cy="255" r="18"/>
+    <circle cx="360" cy="255" r="18"/>
+    <circle cx="415" cy="255" r="18"/>
+    <circle cx="470" cy="255" r="18"/>
+
+    <!-- Row 5 -->
+    <circle cx="140" cy="310" r="18"/>
+    <circle cx="195" cy="310" r="18"/>
+    <circle cx="250" cy="310" r="18"/>
+    <circle cx="305" cy="310" r="18"/>
+    <circle cx="360" cy="310" r="18"/>
+    <circle cx="415" cy="310" r="18"/>
+    <circle cx="470" cy="310" r="18"/>
+  </g>
+
+  <!-- Far Infrared Thermal Ray Symbols on Select Discs -->
+  <g stroke="#C6A66B" stroke-width="1.8" stroke-linecap="round" fill="none">
+    <path d="M 245 84 Q 250 90 255 96"/>
+    <path d="M 300 139 Q 305 145 310 151"/>
+    <path d="M 355 194 Q 360 200 365 206"/>
+    <path d="M 245 249 Q 250 255 255 261"/>
+    <path d="M 410 249 Q 415 255 420 261"/>
+  </g>
+
+  <!-- Electric Controller Attached with Cable -->
+  <path d="M 506 350 C 530 380 500 410 460 415" stroke="#334155" stroke-width="3" fill="none"/>
+  <!-- Handheld Digital Controller Unit -->
+  <rect x="360" y="390" width="105" height="42" rx="8" fill="#1E293B" stroke="#64748B" stroke-width="1.5"/>
+  <rect x="370" y="398" width="40" height="24" rx="4" fill="#0F172A"/>
+  <text x="390" y="415" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#38BDF8" text-anchor="middle">45°C</text>
+  <circle cx="425" cy="405" r="5" fill="#EF4444"/>
+  <circle cx="445" cy="405" r="5" fill="#10B981"/>
+  <rect x="420" y="418" width="30" height="6" rx="3" fill="#94A3B8"/>
+
+  <!-- Specification Tags on Product Graphic -->
+  <g transform="translate(94, 395)">
+    <rect width="180" height="32" rx="6" fill="#145B58"/>
+    <text x="90" y="21" font-family="Manrope, sans-serif" font-size="11" font-weight="600" fill="#FFFFFF" text-anchor="middle">Far Infrared Ceratonic Tech</text>
+  </g>
+</svg>

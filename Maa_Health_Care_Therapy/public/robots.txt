@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://maahealthcare.in/sitemap.xml
