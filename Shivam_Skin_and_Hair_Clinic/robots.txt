@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hiimesh0.github.io/websites/Shivam_Skin_and_Hair_Clinic/sitemap.xml
