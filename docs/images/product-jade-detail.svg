@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" width="100%" height="100%" fill="none">
+  <defs>
+    <radialGradient id="jadeLarge" cx="35%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#A7F3D0"/>
+      <stop offset="25%" stop-color="#34D399"/>
+      <stop offset="70%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#064E3B"/>
+    </radialGradient>
+    <linearGradient id="netMesh" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4B3A2C" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#2D2118" stop-opacity="0.95"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="450" rx="16" fill="#F8F9F6"/>
+  
+  <!-- Leather background texture -->
+  <rect x="50" y="40" width="500" height="370" rx="12" fill="#292019" stroke="#634832" stroke-width="2"/>
+
+  <!-- Three large polished jade discs in close-up -->
+  <!-- Stone 1 -->
+  <circle cx="190" cy="210" r="85" fill="url(#jadeLarge)" stroke="#047857" stroke-width="3"/>
+  <ellipse cx="165" cy="180" rx="30" ry="15" fill="#FFFFFF" fill-opacity="0.25" transform="rotate(-25 165 180)"/>
+
+  <!-- Stone 2 -->
+  <circle cx="360" cy="210" r="85" fill="url(#jadeLarge)" stroke="#047857" stroke-width="3"/>
+  <ellipse cx="335" cy="180" rx="30" ry="15" fill="#FFFFFF" fill-opacity="0.25" transform="rotate(-25 335 180)"/>
+
+  <!-- Stone 3 peek from top -->
+  <circle cx="275" cy="80" r="70" fill="url(#jadeLarge)" stroke="#047857" stroke-width="3"/>
+
+  <!-- Protective netting overlay (micro grid) -->
+  <g stroke="#C6A66B" stroke-opacity="0.3" stroke-width="1.2">
+    <line x1="80" y1="120" x2="480" y2="120"/>
+    <line x1="80" y1="180" x2="480" y2="180"/>
+    <line x1="80" y1="240" x2="480" y2="240"/>
+    <line x1="80" y1="300" x2="480" y2="300"/>
+    
+    <line x1="140" y1="60" x2="140" y2="360"/>
+    <line x1="220" y1="60" x2="220" y2="360"/>
+    <line x1="300" y1="60" x2="300" y2="360"/>
+    <line x1="380" y1="60" x2="380" y2="360"/>
+    <line x1="460" y1="60" x2="460" y2="360"/>
+  </g>
+
+  <!-- Tag badge -->
+  <g transform="translate(160, 360)">
+    <rect width="280" height="38" rx="8" fill="#145B58"/>
+    <text x="140" y="24" font-family="Manrope, sans-serif" font-size="12" font-weight="600" fill="#FFFFFF" text-anchor="middle">Natural Jade Thermal Disc Cluster</text>
+  </g>
+</svg>
