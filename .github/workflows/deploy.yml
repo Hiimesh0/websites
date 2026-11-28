@@ -29,26 +29,26 @@ jobs:
         with:
           node-version: 20
           cache: 'npm'
-          cache-dependency-path: Maa_Health_Care_Therapy/package-lock.json
+          cache-dependency-path: MAA-HEALTH-CARE-THERAPY/package-lock.json
 
       - name: Install dependencies
-        working-directory: Maa_Health_Care_Therapy
+        working-directory: MAA-HEALTH-CARE-THERAPY
         run: npm ci
 
       - name: Build site
-        working-directory: Maa_Health_Care_Therapy
+        working-directory: MAA-HEALTH-CARE-THERAPY
         run: npm run build
 
       - name: Prepare Site Files
         run: |
           mkdir -p public_site
           # Copy built website directly to root of GitHub Pages
-          cp -r Maa_Health_Care_Therapy/dist/* public_site/
+          cp -r MAA-HEALTH-CARE-THERAPY/dist/* public_site/
           # Also support subpaths
-          mkdir -p public_site/Maa_Health_Care_Therapy/dist
-          cp -r Maa_Health_Care_Therapy/dist/* public_site/Maa_Health_Care_Therapy/dist/
+          mkdir -p public_site/MAA-HEALTH-CARE-THERAPY/dist
+          cp -r MAA-HEALTH-CARE-THERAPY/dist/* public_site/MAA-HEALTH-CARE-THERAPY/dist/
           mkdir -p public_site/docs
-          cp -r Maa_Health_Care_Therapy/dist/* public_site/docs/
+          cp -r MAA-HEALTH-CARE-THERAPY/dist/* public_site/docs/
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

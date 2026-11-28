@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%" fill="none">
+  <defs>
+    <linearGradient id="wallGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F4F5F1"/>
+      <stop offset="100%" stop-color="#E8ECE7"/>
+    </linearGradient>
+    <linearGradient id="floorGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E1DDD5"/>
+      <stop offset="100%" stop-color="#CFABA"/>
+    </linearGradient>
+    <linearGradient id="headboard" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#3A4745"/>
+      <stop offset="50%" stop-color="#4B5C59"/>
+      <stop offset="100%" stop-color="#3A4745"/>
+    </linearGradient>
+    <linearGradient id="bedFrame" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#EFEFEA"/>
+      <stop offset="100%" stop-color="#D7DBD6"/>
+    </linearGradient>
+    <linearGradient id="mattressMat" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FBFBF9"/>
+      <stop offset="100%" stop-color="#EDECE8"/>
+    </linearGradient>
+    <linearGradient id="glowWarm" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#C6A66B" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#145B58" stop-opacity="0.05"/>
+    </linearGradient>
+    <radialGradient id="sunlight" cx="0.85" cy="0.15" r="0.6">
+      <stop offset="0%" stop-color="#FFFDF7" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#FFFDF7" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background Wall -->
+  <rect width="800" height="500" fill="url(#wallGrad)"/>
+  <rect width="800" height="500" fill="url(#sunlight)"/>
+
+  <!-- Minimalist Wall Art Frame -->
+  <rect x="300" y="45" width="200" height="110" rx="4" fill="#FFFFFF" stroke="#D1D7D3" stroke-width="2"/>
+  <circle cx="370" cy="100" r="28" fill="#8BAF9B" fill-opacity="0.25"/>
+  <circle cx="430" cy="100" r="22" fill="#C6A66B" fill-opacity="0.2"/>
+  <path d="M340 120 C370 85 410 90 460 115" stroke="#145B58" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+
+  <!-- Modern Bed Frame & Headboard -->
+  <rect x="140" y="160" width="520" height="85" rx="8" fill="url(#headboard)"/>
+  <!-- Bed Base -->
+  <polygon points="120,380 680,380 630,225 170,225" fill="url(#bedFrame)"/>
+  
+  <!-- Main Fitted Bedding -->
+  <polygon points="140,365 660,365 620,235 180,235" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+
+  <!-- The Heating Therapy Mattress on Bed -->
+  <polygon points="185,345 615,345 580,245 220,245" fill="url(#mattressMat)" stroke="#8BAF9B" stroke-width="2"/>
+  <!-- Thermal Warming Aura Overlay -->
+  <polygon points="190,340 610,340 575,250 225,250" fill="url(#glowWarm)"/>
+
+  <!-- Ceramic / Jade Grid Texture Simulation on Mattress -->
+  <g stroke="#C6A66B" stroke-opacity="0.45" stroke-width="1.2">
+    <!-- Horizontal lines with perspective -->
+    <line x1="215" y1="260" x2="585" y2="260"/>
+    <line x1="208" y1="275" x2="592" y2="275"/>
+    <line x1="202" y1="292" x2="598" y2="292"/>
+    <line x1="196" y1="310" x2="604" y2="310"/>
+    <line x1="190" y1="330" x2="610" y2="330"/>
+    
+    <!-- Stone Array Dots (Ceratonic / Jade) -->
+    <circle cx="270" cy="285" r="4" fill="#145B58" fill-opacity="0.3"/>
+    <circle cx="310" cy="285" r="4" fill="#145B58" fill-opacity="0.3"/>
+    <circle cx="350" cy="285" r="4" fill="#145B58" fill-opacity="0.3"/>
+    <circle cx="390" cy="285" r="4" fill="#145B58" fill-opacity="0.3"/>
+    <circle cx="430" cy="285" r="4" fill="#145B58" fill-opacity="0.3"/>
+    <circle cx="470" cy="285" r="4" fill="#145B58" fill-opacity="0.3"/>
+    <circle cx="510" cy="285" r="4" fill="#145B58" fill-opacity="0.3"/>
+    <circle cx="550" cy="285" r="4" fill="#145B58" fill-opacity="0.3"/>
+
+    <circle cx="260" cy="310" r="4.5" fill="#C6A66B" fill-opacity="0.5"/>
+    <circle cx="305" cy="310" r="4.5" fill="#C6A66B" fill-opacity="0.5"/>
+    <circle cx="350" cy="310" r="4.5" fill="#C6A66B" fill-opacity="0.5"/>
+    <circle cx="395" cy="310" r="4.5" fill="#C6A66B" fill-opacity="0.5"/>
+    <circle cx="440" cy="310" r="4.5" fill="#C6A66B" fill-opacity="0.5"/>
+    <circle cx="485" cy="310" r="4.5" fill="#C6A66B" fill-opacity="0.5"/>
+    <circle cx="530" cy="310" r="4.5" fill="#C6A66B" fill-opacity="0.5"/>
+  </g>
+
+  <!-- Digital Temperature Remote on Side Table -->
+  <rect x="75" y="310" width="85" height="110" rx="6" fill="#FFFFFF" stroke="#D1D7D3" stroke-width="1.5"/>
+  <!-- Handheld Remote Controller -->
+  <rect x="92" y="325" width="48" height="75" rx="5" fill="#24312F"/>
+  <rect x="100" y="333" width="32" height="18" rx="2" fill="#145B58"/>
+  <text x="116" y="346" font-family="Inter, sans-serif" font-size="9" fill="#FFFFFF" font-weight="bold" text-anchor="middle">42°C</text>
+  <!-- Remote Control Buttons -->
+  <circle cx="107" cy="363" r="4" fill="#C6A66B"/>
+  <circle cx="125" cy="363" r="4" fill="#8BAF9B"/>
+  <rect x="104" y="375" width="24" height="6" rx="2" fill="#64748B"/>
+  <!-- Cable to mattress -->
+  <path d="M116 400 Q 130 430 185 345" stroke="#3A4745" stroke-width="2.5" fill="none"/>
+
+  <!-- Wooden Floor Foreground -->
+  <rect y="440" width="800" height="60" fill="url(#floorGrad)"/>
+
+  <!-- Badge Overlay on Graphic -->
+  <g transform="translate(560, 40)">
+    <rect width="200" height="58" rx="29" fill="#145B58" filter="drop-shadow(0 4px 12px rgba(0,0,0,0.15))"/>
+    <circle cx="32" cy="29" r="16" fill="#C6A66B"/>
+    <path d="M32 20 L35 26 L41 27 L36 31 L38 37 L32 33 L26 37 L28 31 L23 27 L29 26 Z" fill="#FFFFFF"/>
+    <text x="60" y="27" font-family="Manrope, sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">Maa Health Care</text>
+    <text x="60" y="42" font-family="Inter, sans-serif" font-size="10" fill="#E2E8F0">Thermal Therapy Mats</text>
+  </g>
+</svg>

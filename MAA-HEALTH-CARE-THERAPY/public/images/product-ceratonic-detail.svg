@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" width="100%" height="100%" fill="none">
+  <defs>
+    <radialGradient id="ceratonicClose" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="45%" stop-color="#F1F5F0"/>
+      <stop offset="100%" stop-color="#CBD5C8"/>
+    </radialGradient>
+    <radialGradient id="heatGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#C6A66B" stop-opacity="0.45"/>
+      <stop offset="70%" stop-color="#8BAF9B" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#145B58" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="600" height="450" rx="16" fill="#F8F9F6"/>
+
+  <!-- Close up detail disc background layer -->
+  <rect x="50" y="40" width="500" height="370" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  
+  <!-- Heat Ray Radiation Field -->
+  <circle cx="300" cy="225" r="160" fill="url(#heatGlow)"/>
+
+  <!-- Large Central Ceratonic Disc -->
+  <circle cx="300" cy="225" r="95" fill="url(#ceratonicClose)" stroke="#8BAF9B" stroke-width="4"/>
+  <circle cx="300" cy="225" r="75" fill="none" stroke="#A7C2B4" stroke-width="2" stroke-dasharray="6,4"/>
+  
+  <!-- Radiating Thermal Waves -->
+  <path d="M 270 190 Q 300 170 330 190" stroke="#C6A66B" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <path d="M 260 225 Q 300 205 340 225" stroke="#C6A66B" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <path d="M 270 260 Q 300 240 330 260" stroke="#C6A66B" stroke-width="3" stroke-linecap="round" fill="none"/>
+
+  <!-- Adjacent Discs In Perspective -->
+  <circle cx="110" cy="110" r="65" fill="url(#ceratonicClose)" stroke="#CBD5C8" stroke-width="3"/>
+  <circle cx="490" cy="110" r="65" fill="url(#ceratonicClose)" stroke="#CBD5C8" stroke-width="3"/>
+  <circle cx="110" cy="340" r="65" fill="url(#ceratonicClose)" stroke="#CBD5C8" stroke-width="3"/>
+  <circle cx="490" cy="340" r="65" fill="url(#ceratonicClose)" stroke="#CBD5C8" stroke-width="3"/>
+
+  <!-- Info Label Badge -->
+  <g transform="translate(180, 360)">
+    <rect width="240" height="38" rx="8" fill="#145B58"/>
+    <text x="120" y="24" font-family="Manrope, sans-serif" font-size="12" font-weight="600" fill="#FFFFFF" text-anchor="middle">Ceratonic Far-Infrared Core Detail</text>
+  </g>
+</svg>
